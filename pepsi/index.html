@@ -113,7 +113,7 @@ section{padding-block:56px;border-top:1px solid var(--rule)}
 /* ---------- takeaways ---------- */
 .reads{display:flex;flex-direction:column;gap:38px}
 .read h3{font-family:var(--display);font-weight:700;font-size:clamp(23px,5.6vw,34px);line-height:1.07;letter-spacing:-.026em;margin:0;text-wrap:balance;max-width:20ch}
-.read p{margin-top:12px;font-size:clamp(16px,4.2vw,17px);line-height:1.52;color:var(--muted);max-width:52ch}
+.read p{margin-top:12px;font-size:clamp(16px,4.2vw,17px);line-height:1.52;color:var(--muted);max-width:52ch;text-wrap:pretty}
 
 /* ---------- offers ---------- */
 .offers{display:flex;flex-direction:column}
@@ -121,25 +121,37 @@ section{padding-block:56px;border-top:1px solid var(--rule)}
 .offer:first-child{border-top:0;padding-top:0}
 .offer h3{font-family:var(--display);font-weight:700;text-transform:uppercase;
   font-size:clamp(28px,8.4vw,56px);line-height:1;letter-spacing:-.034em;margin:0;text-wrap:balance}
-.offer .d{margin-top:12px;font-size:clamp(16px,4.2vw,17px);line-height:1.5;color:var(--muted);max-width:50ch}
+.offer .d{margin-top:12px;font-size:clamp(16px,4.2vw,17px);line-height:1.5;color:var(--muted);max-width:50ch;text-wrap:pretty}
 .offer .m{margin-top:11px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+
+/* ---------- phases ---------- */
+.phases{display:flex;flex-direction:column;gap:36px}
+.phase h3{font-family:var(--display);font-weight:700;font-size:clamp(20px,5.2vw,25px);line-height:1.12;letter-spacing:-.022em;margin:0;text-wrap:balance}
+.phase .meta{margin-top:8px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.steps{margin:16px 0 0;border-top:1px solid var(--rule-soft)}
+.step{display:grid;grid-template-columns:96px 1fr;gap:20px;padding:13px 0;border-bottom:1px solid var(--rule-soft)}
+@media (max-width:560px){.step{grid-template-columns:1fr;gap:4px}}
+.step dt{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding-top:4px}
+@media (max-width:560px){.step dt{padding-top:0}}
+.step dd{margin:0;font-size:15.5px;line-height:1.5;color:var(--muted);text-wrap:pretty}
+.step dd b{color:var(--ink);font-weight:600}
 
 /* ---------- panels ---------- */
 .panel{background:var(--blue-wash);border-left:3px solid var(--blue);padding:28px 26px}
 @media (max-width:480px){.panel{padding:22px 18px}}
-.panel h3{font-family:var(--display);font-weight:700;font-size:clamp(19px,5vw,26px);line-height:1.15;letter-spacing:-.02em;margin:0 0 13px;max-width:26ch}
-.panel p{font-size:clamp(16px,4.2vw,16.5px);line-height:1.56;color:var(--muted)}
+.panel h3{font-family:var(--display);font-weight:700;font-size:clamp(19px,5vw,26px);line-height:1.15;letter-spacing:-.02em;margin:0 0 13px;max-width:40ch;text-wrap:balance}
+.panel p{font-size:clamp(16px,4.2vw,16.5px);line-height:1.56;color:var(--muted);text-wrap:pretty}
 .panel p + p{margin-top:13px}
 .panel p b{color:var(--ink);font-weight:600}
 .panel ol{margin:15px 0;padding-left:0;list-style:none;counter-reset:q;display:flex;flex-direction:column;gap:10px}
-.panel li{counter-increment:q;padding-left:28px;position:relative;font-size:clamp(16px,4.2vw,16.5px);line-height:1.45;color:var(--ink)}
+.panel li{counter-increment:q;padding-left:28px;position:relative;font-size:clamp(16px,4.2vw,16.5px);line-height:1.45;color:var(--ink);text-wrap:pretty}
 .panel li::before{content:counter(q);position:absolute;left:0;top:0;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--blue);line-height:1.85}
 
 .next{border:1px solid var(--rule);border-left:3px solid var(--mark);background:var(--sunk);padding:28px 26px}
 @media (max-width:480px){.next{padding:22px 18px}}
 .next .lbl{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mark);display:block;margin-bottom:11px}
 .next h3{font-family:var(--display);font-weight:700;font-size:clamp(20px,5.2vw,28px);line-height:1.1;letter-spacing:-.024em;margin:0 0 13px;max-width:24ch}
-.next p{font-size:clamp(16px,4.2vw,16.5px);line-height:1.52;color:var(--muted);max-width:56ch}
+.next p{font-size:clamp(16px,4.2vw,16.5px);line-height:1.52;color:var(--muted);max-width:56ch;text-wrap:pretty}
 
 /* ---------- track record ---------- */
 .proofs{display:flex;flex-direction:column}
@@ -152,7 +164,7 @@ section{padding-block:56px;border-top:1px solid var(--rule)}
 .proof .lg svg{height:34px;width:34px;display:block}
 @media (max-width:620px){.proof .lg{margin-bottom:8px}}
 .proof .who em{display:block;font-style:normal;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:5px}
-.proof p{font-size:clamp(15.5px,4.1vw,16.5px);line-height:1.54;color:var(--muted);max-width:56ch}
+.proof p{font-size:clamp(15.5px,4.1vw,16.5px);line-height:1.54;color:var(--muted);max-width:56ch;text-wrap:pretty}
 .proof p b{color:var(--ink);font-weight:600}
 
 .who-lede{font-size:clamp(17px,4.4vw,19px);line-height:1.5;color:var(--ink);max-width:46ch;margin-bottom:30px}
@@ -182,6 +194,66 @@ section{padding-block:56px;border-top:1px solid var(--rule)}
 
 footer{padding-block:34px 60px;border-top:1px solid var(--rule);margin-top:56px}
 footer p{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);line-height:1.9}
+
+
+/* ================= MOTION ================= */
+/* Nothing here hides content. Scroll reveals only run where the browser
+   supports scroll-driven timelines, and resolve instantly for anything
+   already on screen. All of it is off under prefers-reduced-motion. */
+
+.progress{position:fixed;top:0;left:0;right:0;height:2px;background:var(--blue);
+  transform:scaleX(0);transform-origin:0 50%;z-index:20;pointer-events:none}
+@supports (animation-timeline:scroll()){
+  @media (prefers-reduced-motion:no-preference){
+    .progress{animation:progGrow linear both;animation-timeline:scroll(root)}
+    @keyframes progGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  }
+}
+
+@media (prefers-reduced-motion:no-preference){
+  /* page-load / view-change sequence */
+  @keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+  @keyframes bracketDraw{from{opacity:0;width:4px;height:4px}to{opacity:1;width:22px;height:22px}}
+  @keyframes headlineUp{
+    from{opacity:0;transform:translateY(22px);clip-path:inset(0 0 100% 0)}
+    to{opacity:1;transform:none;clip-path:inset(0 0 -20% 0)}
+  }
+  .view:not([hidden]) .hero .eyebrow{animation:rise .5s cubic-bezier(.2,.75,.3,1) both}
+  .view:not([hidden]) .hero h1.big{animation:headlineUp .62s .05s cubic-bezier(.2,.75,.3,1) both}
+  .view:not([hidden]) .hero .standfirst{animation:rise .55s .16s cubic-bezier(.2,.75,.3,1) both}
+  .view:not([hidden]) .bracket{animation:bracketDraw .45s .28s cubic-bezier(.2,.75,.3,1) both}
+
+  /* gate */
+  #gate .gatecard > *{animation:rise .5s cubic-bezier(.2,.75,.3,1) both}
+  #gate .gate-marks{animation-delay:0s}
+  #gate .kicker{animation-delay:.06s}
+  #gate h1{animation-delay:.11s}
+  #gate p.sub{animation-delay:.16s}
+  #gate .gateform{animation-delay:.21s}
+
+  /* hover */
+  .tabs button{transition:color .18s ease,border-color .18s ease}
+  .jump .jt,.jump .ja{transition:color .18s ease,transform .22s cubic-bezier(.2,.75,.3,1)}
+  .jump:hover .ja{transform:translateX(5px)}
+  .person{transition:background-color .18s ease}
+  .person:hover{background:var(--sunk)}
+  .proof .lg img,.proof .lg svg{transition:transform .25s cubic-bezier(.2,.75,.3,1)}
+  .proof:hover .lg img,.proof:hover .lg svg{transform:scale(1.07)}
+  .gateform button{transition:background-color .18s ease,border-color .18s ease,color .18s ease}
+}
+
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .read,.offer,.proof,.phase,.person,.term,.panel,.next,.jump,.who-lede{
+      animation:revealIn linear both;
+      animation-timeline:view();
+      animation-range:entry 4% entry 52%;
+    }
+    @keyframes revealIn{from{opacity:.15;transform:translateY(18px)}to{opacity:1;transform:none}}
+  }
+}
+
+@media print{.progress{display:none}}
 
 @media print{
   body{background:#fff;background-image:none;color:#000;font-size:11pt}
@@ -224,6 +296,8 @@ footer p{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.
 
 <div id="site">
 
+<div class="progress" aria-hidden="true"></div>
+
 <header class="topbar">
   <div class="wrap topbar-in">
     <span class="marks">
@@ -253,43 +327,43 @@ footer p{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.
       <div class="bracket" aria-hidden="true"></div>
       <p class="eyebrow"><span>LVLON</span><span class="sl">//</span><span>Supply Chain Innovation</span><span class="sl">//</span><span>September 2026</span></p>
       <h1 class="big">We have run the model <span class="hl">you are building</span></h1>
-      <p class="standfirst">We build innovation operating models, prototype capacity and new ventures inside large companies. <b>As operators, not advisors.</b></p>
+      <p class="standfirst">We help big companies build things people actually need, and stop the things they do not. <b>As operators, not advisors.</b></p>
     </div>
 
     <section>
       <div class="sec-head"><span class="sec-num">01 //</span><h2>What we took away</h2></div>
       <div class="reads">
         <div class="read">
-          <h3>Funding decides everything the model does next</h3>
-          <p>Large companies are good at starting things and bad at stopping them. That asymmetry, not the process design, is what governs an orchestration model in practice.</p>
+          <h3>How you fund it matters more than how you run it</h3>
+          <p>Big companies are good at starting things and bad at stopping them. That, more than the design of the model, is what decides how well the new one works.</p>
         </div>
         <div class="read">
-          <h3>Alignment is the tax, not the technology</h3>
-          <p>On a build with dozens of contributors, most of the real cost is keeping everyone pointed at one objective. Better tooling does not fix that. It makes it easier to add people.</p>
+          <h3>Keeping everyone pointed the same way is the hard part</h3>
+          <p>When dozens of people touch one build, most of the cost is keeping them all working toward the same goal. Better tools do not fix this. They make it easier to add more people.</p>
         </div>
         <div class="read">
-          <h3>Venturing is a different muscle from innovation</h3>
-          <p>Prototyping teaches you what is possible. Standing up a company teaches you what survives contact with the parent, which is mostly structure. Few people have done both.</p>
+          <h3>Building a company is not the same as building a prototype</h3>
+          <p>A prototype shows you what is possible. A company has to survive on its own, which comes down to how it is set up more than how good the idea is. Few people have done both.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="sec-head"><span class="sec-num">02 //</span><h2>What we do</h2></div>
+      <div class="sec-head"><span class="sec-num">02 //</span><h2>What we deliver</h2></div>
       <div class="offers">
         <div class="offer">
-          <h3>Innovation operating models</h3>
-          <p class="d">How an idea enters, how it gets staged, what kills it, and how the portfolio stays balanced.</p>
+          <h3>Know what to fund, and when to stop</h3>
+          <p class="d">We set up how ideas move through your new model: what an idea has to show to get to the next stage, and what stops it before it eats a budget.</p>
           <p class="m">6 to 8 weeks // Fixed fee</p>
         </div>
         <div class="offer">
-          <h3>Prototype capacity</h3>
-          <p class="d">A team composed for one build and stood down after it. Your people stop being the constraint.</p>
+          <h3>Proof that people want it</h3>
+          <p class="d">We talk to the people who would actually use it, build something real, and put it in their hands. You get a clear answer, not a demo.</p>
           <p class="m">60 days // Fixed fee</p>
         </div>
         <div class="offer">
-          <h3>Venture builds</h3>
-          <p class="d">Idea to operating company, including the structure that decides whether it can stand on its own.</p>
+          <h3>A new business that runs on its own</h3>
+          <p class="d">We take an idea all the way to a working company, including the legal and commercial set-up that lets it survive outside PepsiCo.</p>
           <p class="m">Staged // First stage 90 days</p>
         </div>
       </div>
@@ -300,7 +374,7 @@ footer p{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.
       <div class="next">
         <span class="lbl">Proposed</span>
         <h3>One working session, no fee</h3>
-        <p>Walk us through the process you have designed. We come back within a week with a written readback naming the gaps and the decision points most likely to fail under load. Yours to circulate whatever happens next.</p>
+        <p>Walk us through the process you have designed. We come back within a week with a written readback naming the gaps and the places the process is most likely to break once it gets busy. Yours to circulate whatever happens next.</p>
       </div>
 
       <div class="jumps">
@@ -309,7 +383,7 @@ footer p{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.
           <span class="ja" aria-hidden="true">&rarr;</span>
         </button>
         <button class="jump" data-view="working">
-          <span><span class="jt">How we work</span><span class="js">Fees, gates, and the fair objection to hiring us at all.</span></span>
+          <span><span class="jt">How we work</span><span class="js">What the weeks look like, how we charge, and the fair objection to hiring us at all.</span></span>
           <span class="ja" aria-hidden="true">&rarr;</span>
         </button>
       </div>
@@ -338,7 +412,7 @@ footer p{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.
         </div>
         <div class="proof">
           <div class="who"><span class="lg"><svg viewBox="0 0 100 100" role="img" aria-label="Target"><circle cx="50" cy="50" r="50" fill="#CC0000"/><circle cx="50" cy="50" r="33.33" fill="#FFFFFF"/><circle cx="50" cy="50" r="16.67" fill="#CC0000"/></svg></span>Target<em>Ways of working</em></div>
-          <p>Built and ran the Leap Network, bringing design thinking and lean startup into a company that did not work that way. Roughly 4,500 people through bootcamps and more than 400 internal coaches trained, <b>so the method outlived the team that introduced it.</b></p>
+          <p>Built and ran the Leap Network, putting human-centred design and lean startup inside a company that did not work that way. Roughly 4,500 people through bootcamps and more than 400 internal coaches trained, <b>so the discipline outlived the team that introduced it.</b></p>
         </div>
         <div class="proof">
           <div class="who"><span class="lg" aria-hidden="true"></span>Two venture builds<em>Idea to company</em></div>
@@ -379,7 +453,7 @@ footer p{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.
 
       <div class="jumps">
         <button class="jump" data-view="working">
-          <span><span class="jt">How we work</span><span class="js">Fees, gates, and the fair objection to hiring us at all.</span></span>
+          <span><span class="jt">How we work</span><span class="js">What the weeks look like, how we charge, and the fair objection to hiring us at all.</span></span>
           <span class="ja" aria-hidden="true">&rarr;</span>
         </button>
       </div>
@@ -395,26 +469,65 @@ footer p{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.
 
     <div class="hero">
       <p class="eyebrow"><span>How we work</span><span class="sl">//</span><span>LVLON</span></p>
-      <h1 class="big">Composable, <span class="hl">then gone</span></h1>
-      <p class="standfirst">Fixed fee, an end date agreed on day one, and a written postmortem whether it worked or not.</p>
+      <h1 class="big">The hard part is <span class="hl">knowing what to build</span></h1>
+      <p class="standfirst">How the work runs, week by week, and the terms. Fixed fee, an end date agreed on day one, and a written postmortem whether it worked or not.</p>
     </div>
 
     <section>
       <div class="sec-head"><span class="sec-num">01 //</span><h2>The fair objection</h2></div>
       <div class="panel">
         <h3>"We could do a lot of this internally."</h3>
-        <p>You could, and in places you already are. The Leap Network was built on that belief, which is why we trained coaches and left. So this is not a capability argument. It is an arithmetic one, and three numbers settle it:</p>
+        <p>You can, and increasingly everyone can. Building has never been cheaper. <b>That is the problem, not the answer.</b></p>
+        <p>When a working prototype takes days instead of quarters, the constraint moves. It stops being whether you can build the thing and becomes whether the thing is worth building. Teams lose the line back to the people they are building for and ship work that is fast, elegant, and pointed at nothing.</p>
+        <p>Human-centred design is the discipline that keeps that line intact. It is not a workshop. It is knowing which user to talk to, what to ask, how to read the answer, and when the evidence says stop. Paul founded that practice at BCG and built the Leap Network at Target to put it inside a company that did not have it, training coaches rather than staying, <b>so it outlived the team that introduced it.</b></p>
+        <p>So the question is not whether you have hands. Three better ones:</p>
         <ol>
-          <li>How many prototypes reached a real decision last quarter, and how many problems were queued behind them?</li>
-          <li>What share of the person doing the prototyping is spent prototyping, rather than finding the problem and keeping people aligned?</li>
-          <li>When something is killed, how long does that take from the moment everyone privately knows?</li>
+          <li>Of what got built last quarter, how much was tested with the people it was for before it was built?</li>
+          <li>Who on the team has spoken to an end user in the last month?</li>
+          <li>When something gets killed, is it because the evidence said so, or because the sponsor moved on?</li>
         </ol>
-        <p>If those numbers look healthy, you do not need us. If they do not, the constraint is <b>capacity and cadence rather than talent</b>, and capacity that stands down afterwards is cheaper than capacity you carry. You keep the ownership and the credit.</p>
       </div>
     </section>
 
     <section>
-      <div class="sec-head"><span class="sec-num">02 //</span><h2>Terms</h2></div>
+      <div class="sec-head"><span class="sec-num">02 //</span><h2>What the weeks look like</h2></div>
+      <div class="phases">
+
+        <div class="phase">
+          <h3>Know what to fund, and when to stop</h3>
+          <p class="meta">6 to 8 weeks // Two milestones</p>
+          <dl class="steps">
+            <div class="step"><dt>Weeks 1&ndash;2</dt><dd>We learn how ideas actually get funded and stopped today, by sitting in the real meetings rather than reading the written process.</dd></div>
+            <div class="step"><dt>Weeks 3&ndash;5</dt><dd>We write the stages, what each one has to prove, and the rules that end a project. <b>Tested on real projects you have running now</b>, not in theory.</dd></div>
+            <div class="step"><dt>Weeks 6&ndash;8</dt><dd>We run it once with you on real decisions. You keep the model and the words to defend it upstairs.</dd></div>
+          </dl>
+        </div>
+
+        <div class="phase">
+          <h3>Proof that people want it</h3>
+          <p class="meta">60 days // Milestone-gated</p>
+          <dl class="steps">
+            <div class="step"><dt>Weeks 1&ndash;2</dt><dd>We find and talk to the people the thing is for. <b>The problem gets written from what they say</b>, not from the brief.</dd></div>
+            <div class="step"><dt>Weeks 3&ndash;6</dt><dd>Build, test, rebuild. Something working in front of real users every week. Never production grade.</dd></div>
+            <div class="step"><dt>Weeks 7&ndash;8</dt><dd>A clear recommendation, the proof behind it, and a handover so the next one does not start from scratch.</dd></div>
+          </dl>
+        </div>
+
+        <div class="phase">
+          <h3>A new business that runs on its own</h3>
+          <p class="meta">Staged // First stage 90 days</p>
+          <dl class="steps">
+            <div class="step"><dt>Weeks 1&ndash;4</dt><dd>The idea and the market it needs, backed by customers who say they would pay.</dd></div>
+            <div class="step"><dt>Weeks 5&ndash;9</dt><dd>Build enough to sell. First conversations with real buyers, not a pitch deck.</dd></div>
+            <div class="step"><dt>Weeks 10&ndash;13</dt><dd>How it would be set up. <b>What it takes to stand on its own, and whether it should.</b></dd></div>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="sec-num">03 //</span><h2>Terms</h2></div>
       <dl class="terms">
         <div class="term"><dt>Fee</dt><dd>Fixed and agreed up front. No retainers, no rate cards, no change orders for scope we should have foreseen.</dd></div>
         <div class="term"><dt>Time</dt><dd>Every engagement has an end date on the day it starts.</dd></div>
@@ -424,11 +537,11 @@ footer p{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.
     </section>
 
     <section>
-      <div class="sec-head"><span class="sec-num">03 //</span><h2>Starting</h2></div>
+      <div class="sec-head"><span class="sec-num">04 //</span><h2>Starting</h2></div>
       <div class="next">
         <span class="lbl">Proposed</span>
         <h3>One working session, no fee</h3>
-        <p>Walk us through the process you have designed. We come back within a week with a written readback naming the gaps and the decision points most likely to fail under load. It is a document you can circulate whatever happens next, and the fastest way for all of us to find out whether there is an engagement worth having.</p>
+        <p>Walk us through the process you have designed. We come back within a week with a written readback naming the gaps and the places the process is most likely to break once it gets busy. It is a document you can circulate whatever happens next, and the fastest way for all of us to find out whether there is an engagement worth having.</p>
       </div>
 
       <div class="jumps">
