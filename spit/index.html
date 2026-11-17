@@ -121,7 +121,15 @@
   .ticker:hover .track{animation-play-state:paused}
   @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.ticker .track{animation:none}}
-  </style></head><body>
+  </style><meta name="robots" content="noindex,nofollow"><style>
+#spit-site{display:none}html.spit-unlocked #spit-site{display:block}
+#spit-auth{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;background:#EDE9E1;color:#3B382F;font-family:"Avenir Next",Avenir,system-ui,sans-serif;padding:24px}
+html.spit-unlocked #spit-auth{display:none}
+.spit-lock{width:min(100%,390px);text-align:center}.spit-lock h1{font-size:62px;letter-spacing:-.04em;font-weight:600;margin:0 0 12px}.spit-lock p{font-size:14px;color:#6B6558;margin:0 0 30px}
+.spit-lock form{display:flex;flex-direction:column;gap:12px}.spit-lock input{width:100%;border:1px solid #DCD6C9;background:#FBFAF6;color:#3B382F;padding:15px 18px;font-size:16px;border-radius:0}
+.spit-lock button{border:0;background:#5F6A5B;color:white;padding:15px;font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.spit-lock .error{min-height:20px;color:#9A3E33;font-size:13px;margin-top:12px}
+</style></head><body><div id="spit-auth"><div class="spit-lock"><h1>spit</h1><p>Private preview. Enter the password to continue.</p><form id="spit-auth-form"><input type="password" id="spit-auth-input" placeholder="Password" aria-label="Password" autocomplete="current-password" required autofocus><button type="submit">Enter site</button></form><p id="spit-auth-error" class="error" role="alert"></p></div></div><div id="spit-site">
 
   <header><div class="wrap"><nav>
     <a href="#top" class="brand">spit</a>
@@ -253,4 +261,7 @@
     els.forEach(function(el){ io.observe(el); });
   })();
   </script>
-  </body></html>
+  </div><script>(function(){var KEY="spit-preview-access-v1",HASH="3a7647a8e327e8e462cc2262b3369a57dbd51f37136656ba9504b45de2378c92";
+if(sessionStorage.getItem(KEY)===HASH)document.documentElement.classList.add("spit-unlocked");
+document.addEventListener("DOMContentLoaded",function(){var f=document.getElementById("spit-auth-form");f.addEventListener("submit",async function(e){e.preventDefault();var input=document.getElementById("spit-auth-input"),error=document.getElementById("spit-auth-error");error.textContent="";try{var bytes=new TextEncoder().encode(input.value);var digest=await crypto.subtle.digest("SHA-256",bytes);var got=Array.from(new Uint8Array(digest)).map(function(n){return n.toString(16).padStart(2,"0")}).join("");if(got===HASH){sessionStorage.setItem(KEY,HASH);document.documentElement.classList.add("spit-unlocked");input.value="";window.scrollTo(0,0)}else{error.textContent="Incorrect password. Please try again.";input.value="";input.focus()}}catch(err){error.textContent="Unable to check password. Please use a modern browser."}})});
+})();</script></body></html>
